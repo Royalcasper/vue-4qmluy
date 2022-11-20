@@ -90,14 +90,14 @@ export default {
         this.$emit('updateList', newInactiveList);
       }
     },
-  },
-  removeDuplicatesFromInactiveList() {
-    //Remove items from inactiveList
-    const newInactiveList = this.list.filter(
-      (val) => !this.internalModelValue.includes(val)
-    );
+    removeDuplicatesFromInactiveList() {
+      //Remove items from inactiveList
+      const newInactiveList = this.list.filter(
+        (val) => !this.internalModelValue.includes(val)
+      );
 
-    this.$emit('updateList', newInactiveList);
+      this.$emit('updateList', newInactiveList);
+    },
   },
 };
 </script>
