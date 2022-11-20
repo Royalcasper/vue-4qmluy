@@ -29,7 +29,7 @@ export default {
     modelValue: Array,
   },
   mounted() {
-    removeDuplicatesFromInactiveList();
+    this.removeDuplicatesFromInactiveList();
   },
   data() {
     return {
