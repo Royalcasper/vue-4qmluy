@@ -1,19 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="https://vuejs.org/images/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SelectList v-model="selectedListItems" :list="list" />
+    <p>{{ selectedListItems }}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SelectList from './components/SelectList.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    SelectList,
+  },
+  data() {
+    return {
+      selectedListItems: [],
+      list: ['apple', 'apple', 'pear', 'banana'],
+    };
+  },
+};
 </script>
 
 <style>
