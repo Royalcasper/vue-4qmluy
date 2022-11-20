@@ -1,23 +1,31 @@
 <template>
   <div id="app">
-    <SelectList v-model="selectedListItems" :list="list" />
-    <p>{{ selectedListItems }}</p>
+    <TransferList
+      v-model="activeListItems"
+      :list="list"
+      @update-List="updateList"
+    />
   </div>
 </template>
 
 <script>
-import SelectList from './components/SelectList.vue';
+import TransferList from './components/TransferList.vue';
 
 export default {
   name: 'App',
   components: {
-    SelectList,
+    TransferList,
   },
   data() {
     return {
-      selectedListItems: [],
+      activeListItems: ['pear'],
       list: ['apple', 'pear', 'banana'],
     };
+  },
+  methods: {
+    updateList(val) {
+      this.list = val;
+    },
   },
 };
 </script>

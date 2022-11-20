@@ -1,5 +1,5 @@
 <template>
-  <div class="checkboxList">
+  <div class="checkboxListContainer">
     <div class="totalItems">
       <input
         type="checkbox"
@@ -9,14 +9,16 @@
       />
       <label> {{ list.length }} items</label>
     </div>
-    <div v-for="(item, index) in list">
-      <input
-        type="checkbox"
-        :value="item"
-        :id="index"
-        v-model="internalModelValue"
-      />
-      <label>{{ item }}</label>
+    <div class="checkboxList">
+      <div v-for="(item, index) in list">
+        <input
+          type="checkbox"
+          :value="item"
+          :id="index"
+          v-model="internalModelValue"
+        />
+        <label>{{ item }}</label>
+      </div>
     </div>
   </div>
 </template>
@@ -50,12 +52,14 @@ export default {
 input {
   margin-top: 8px;
 }
-.checkboxList {
+.checkboxListContainer {
   width: 150px;
+  border: 2px solid black;
+}
+.checkboxList {
   height: 80px;
   overflow: scroll;
   overflow-x: hidden;
-  border: 2px solid black;
 }
 .totalItems {
   border-bottom: 2px solid black;
