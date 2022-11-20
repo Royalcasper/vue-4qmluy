@@ -3,10 +3,10 @@
     <SelectList v-model="selectedInactiveListItems" :list="list" />
     <div>
       <div>
-        <button type="button" @click="addToActiveList()">></button>
+        <button type="button" @click="addToActiveList()">{{ '>' }}</button>
       </div>
       <div>
-        <button type="button" @click="removeFromActiveList()"><</button>
+        <button type="button" @click="removeFromActiveList()">{{ '<' }}</button>
       </div>
     </div>
     <SelectList v-model="selectedActiveListItems" :list="internalModelValue" />
