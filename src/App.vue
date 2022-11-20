@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       selectedListItems: [],
-      list: ['apple', 'apple', 'pear', 'banana'],
+      list: ['apple', 'pear', 'banana'],
     };
   },
 };
